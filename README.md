@@ -18,8 +18,8 @@ three slash commands.
 
 | Folder | What it is |
 |--------|-----------|
-| **`starter/`** | The kit. Two sources waiting in `raw/`, an empty `wiki/`. **This is the one you open.** |
-| **`finished/`** | The answer key — the same kit after one `/ingest`. Four articles, eleven links. Compare against it, or just read it. |
+| **`starter/`** | The kit. Three sources waiting in `raw/`, an empty `wiki/`. **This is the one you open.** |
+| **`finished/`** | The answer key — the same kit after one `/ingest`. Six articles, fifteen links. Compare against it, or just read it. |
 
 If you fall behind during the session, don't scramble. `finished/` has the completed
 version, and `starter/` works fine at your kitchen table afterwards.
@@ -66,16 +66,16 @@ Worth reading while things load.
 /ingest
 ```
 
-Claude finds the two sources in `raw/`, reads them, fetches the link, and writes articles
-into `wiki/` — one per concept, cross-linked in both directions, each recording which source
-it came from.
+Claude finds the three sources in `raw/`, reads them, fetches the two links, and writes
+articles into `wiki/` — one per concept, cross-linked in both directions, each recording
+which source it came from.
 
 ### 4. Look at the graph
 
 Back to Obsidian. **Cmd/Ctrl + G**. Your notes are nodes; your `[[wikilinks]]` are edges.
 
-You should get **4 articles and 11 links**. Faded, hollow nodes would mean a broken link —
-run `/lint` if you see any.
+You should get roughly **6 articles and 15 links**. Faded, hollow nodes would mean a broken
+link — run `/lint` if you see any.
 
 ### 5. Ask it something
 

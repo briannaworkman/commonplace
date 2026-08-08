@@ -3,7 +3,7 @@
 This is the working vault. Open **this folder** (not the repo root) in both Obsidian and
 Claude Code.
 
-`raw/` has two sources waiting. `wiki/` is empty. That's the starting line.
+`raw/` has three sources waiting. `wiki/` is empty. That's the starting line.
 
 ## Run it
 
@@ -11,9 +11,9 @@ Claude Code.
 /ingest
 ```
 
-Claude reads the two sources, fetches the link, and writes cross-linked articles into
-`wiki/`. Then press **Cmd/Ctrl + G** in Obsidian to see the graph — you should get
-**4 articles and 11 links**.
+Claude reads the three sources, fetches the two links, and writes cross-linked articles
+into `wiki/`. Then press **Cmd/Ctrl + G** in Obsidian to see the graph — you should get
+roughly **6 articles and 15 links**.
 
 Then ask it something:
 

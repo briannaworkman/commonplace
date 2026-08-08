@@ -5,7 +5,8 @@ updated: 2026-08-12
 sources:
   - raw/notes/Why Second Brains Fail.md
   - raw/links/Zettelkasten.md
-related: ["[[Atomic Notes]]", "[[Zettelkasten]]", "[[The Collector's Fallacy]]"]
+  - raw/links/Loops, Graphs, and When to Nest One Inside the Other.md
+related: ["[[Atomic Notes]]", "[[Zettelkasten]]", "[[The Collector's Fallacy]]", "[[Graph Engineering]]"]
 ---
 
 # Linked Thought
@@ -36,3 +37,15 @@ remembered making.
 Linking only works if the endpoints are specific, which is the requirement that
 [[Atomic Notes]] exists to satisfy. Vague notes produce vague edges, and a graph of vague edges
 tells you nothing.
+
+## The same claim, made about work
+
+The argument generalizes past note-taking. [[Graph Engineering]] makes an identical case
+about how work is scheduled: a sequential plan imposes one ordering on steps that mostly
+have no ordering between them, exactly as a folder tree imposes one location on ideas that
+belong in several. Its "fake-edge test" — does step B actually consume step A's output? —
+is the same question as asking whether a folder boundary reflects anything real.
+
+That two sources this far apart, a Wikipedia page about index cards and an essay about
+agent orchestration, converge on one claim is itself the argument for keeping a linked
+collection. Neither would have surfaced the other in a folder.

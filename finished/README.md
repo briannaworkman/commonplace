@@ -7,13 +7,15 @@ should look like — or just read the articles here on GitHub.
 
 ## What one `/ingest` produced
 
-Two sources in `raw/`:
+Three sources in `raw/`:
 
 - `raw/notes/Why Second Brains Fail.md` — a note, read as-is
-- `raw/links/Zettelkasten.md` — started as a bare URL; Claude fetched the page and
-  archived the text in place
+- `raw/links/Zettelkasten.md` — started as a bare URL; Claude fetched the page and archived
+  the text in place
+- `raw/links/Loops, Graphs, and When to Nest One Inside the Other.md` — same, an essay on
+  agent orchestration
 
-Became four cross-linked articles:
+Became six cross-linked articles:
 
 | Article | The idea |
 |---------|----------|
@@ -21,31 +23,44 @@ Became four cross-linked articles:
 | [Atomic Notes](<wiki/Atomic Notes.md>) | One idea per note, titled as a claim, so it can be linked precisely |
 | [Linked Thought](<wiki/Linked Thought.md>) | The value is in the edges; linking compounds where filing decays |
 | [The Collector's Fallacy](<wiki/The Collector's Fallacy.md>) | Mistaking having saved something for having learned it |
+| [Loop Engineering](<wiki/Loop Engineering.md>) | One agent iterating until a checkable criterion is met |
+| [Graph Engineering](<wiki/Graph Engineering.md>) | Run whatever isn't genuinely dependent in parallel |
 
-**4 articles, 11 links, 0 broken links, 0 orphans.**
+**6 articles, 15 links, 0 broken links, 0 orphans.**
 
 ## Things worth noticing
 
-**Concepts, not summaries.** No article is "a summary of the note." Each explains one idea
+**Concepts, not summaries.** No article is "a summary of source X." Each explains one idea
 on its own terms — you can read *Atomic Notes* without knowing where it came from. That's
 what makes them reusable later.
 
-**Links go both ways.** *Atomic Notes* links to *Linked Thought*, and *Linked Thought*
-links back. Neither is subordinate to the other, so you can enter the graph anywhere.
+**Links go both ways.** *Atomic Notes* links to *Linked Thought*, and *Linked Thought* links
+back. Neither is subordinate, so you can enter the graph anywhere.
 
 **Ideas got split across sources.** *Atomic Notes* draws on both the note and the fetched
 Wikipedia page — check its `sources:` list. Neither source alone contains that article.
 
-**Every article carries its provenance.** The `sources:` field in each file's frontmatter
-is what lets `/query` cite where an answer came from. It's also the system's entire memory
-of what it has read — see `CLAUDE.md`.
+**The interesting one: two unrelated sources turned out to agree.** A Wikipedia page about
+1950s index cards and an essay about orchestrating AI agents are not obviously about the
+same thing. But *Graph Engineering*'s "fake-edge test" — does step B actually consume step
+A's output, or did you just write them in that order? — is the same question *Linked
+Thought* asks about folders, which impose one location on ideas that belong in several.
+Both say: keep the relationships that are real, drop the ones your writing method invented.
+
+Nobody planned that link. It appeared because both sources went into the same graph. That
+is the entire argument for keeping one — and it's the thing a folder of PDFs will never do
+for you.
+
+**Every article carries its provenance.** The `sources:` field in each file's frontmatter is
+what lets `/query` cite where an answer came from. It's also the system's entire memory of
+what it has read — see `CLAUDE.md`.
 
 ## Your results will differ
 
-Claude won't produce these four articles word for word, and might reasonably split the
-concepts differently — five articles, or three. That's fine. Compare the *shape*: are the
-articles about single ideas, do the links run both ways, does every article cite its
-sources, and does the graph connect?
+Claude won't produce these six articles word for word, and might reasonably split the
+concepts differently — seven articles, or five. That's fine. Compare the *shape*: are the
+articles about single ideas, do links run both ways, does every article cite its sources,
+and does the graph connect?
 
 If your links render as faded hollow nodes, they're broken — a filename didn't match its
 title. Run `/lint`.
