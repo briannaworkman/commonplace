@@ -33,7 +33,8 @@ version, and `starter/` works fine at your kitchen table afterwards.
 
 ## Get the files
 
-**No git needed:** green **Code** button above → **Download ZIP** → unzip.
+**No git needed:** green **Code** button above → **Download ZIP** → unzip. You'll get a
+folder called **`commonplace-main`** — that's the repo root, and `starter/` is inside it.
 
 **Or clone:**
 
