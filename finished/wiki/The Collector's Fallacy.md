@@ -4,7 +4,8 @@ tags: [knowledge-management, cognition, anti-pattern]
 updated: 2026-08-12
 sources:
   - raw/notes/Why Second Brains Fail.md
-related: ["[[Atomic Notes]]", "[[Zettelkasten]]", "[[Linked Thought]]"]
+  - raw/transcripts/Second Pass - Ep 47 - Marisol Reyes.md
+related: ["[[Atomic Notes]]", "[[Zettelkasten]]", "[[Linked Thought]]", "[[Progressive Summarization]]"]
 ---
 
 # The Collector's Fallacy
@@ -31,6 +32,11 @@ The defence is to make the system refuse to store what it hasn't digested — wh
 function of [[Atomic Notes]]. Requiring one idea per note, in your own words, under a title
 stating a claim, means you cannot file something you haven't understood. The friction is the
 feature.
+
+[[Progressive Summarization]] is the same defence spread over time. Highlighting is the fallacy
+in miniature — an action that feels like comprehension while producing none — and the answer is
+to distil in layers separated by weeks, letting what you forget do the filtering instead of
+deciding on the first read what mattered.
 
 A [[Zettelkasten]] built from clippings rather than written notes provides no such defence, which
 is why the method insists on rewriting rather than copying. And because value accrues in the

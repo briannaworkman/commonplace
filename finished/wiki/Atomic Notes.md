@@ -5,7 +5,8 @@ updated: 2026-08-12
 sources:
   - raw/notes/Why Second Brains Fail.md
   - raw/links/Zettelkasten.md
-related: ["[[Zettelkasten]]", "[[Linked Thought]]"]
+  - raw/transcripts/Second Pass - Ep 47 - Marisol Reyes.md
+related: ["[[Zettelkasten]]", "[[Linked Thought]]", "[[Write for the Stranger]]"]
 ---
 
 # Atomic Notes
@@ -30,6 +31,10 @@ Titling a note as a defensible claim rather than a topic ("Folders force one loc
 rather than "Notes on folders") forces the digestion the system depends on. You cannot write the
 title until you have understood the thing, which is the entire point — it makes storing something
 you haven't processed slightly harder than processing it.
+
+The same requirement shows up as [[Write for the Stranger]]: a note has to hold up for a reader
+who wasn't there, and one idea stated plainly is what clears that bar. Atomicity is the
+granularity; writing for the stranger is the self-sufficiency. A note needs both.
 
 ## Insertion, not accumulation
 

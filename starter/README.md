@@ -3,7 +3,8 @@
 This is the working vault. Open **this folder** (not the repo root) in both Obsidian and
 Claude Code.
 
-`raw/` has three sources waiting. `wiki/` is empty. That's the starting line.
+`raw/` has four sources waiting — a note, two links, and a podcast transcript. `wiki/` is
+empty. That's the starting line.
 
 ## Run it
 
@@ -11,9 +12,9 @@ Claude Code.
 /ingest
 ```
 
-Claude reads the three sources, fetches the two links, and writes cross-linked articles
-into `wiki/`. Then press **Cmd/Ctrl + G** in Obsidian to see the graph — you should get
-roughly **6 articles and 15 links**.
+Claude reads the four sources, fetches the two links, and writes cross-linked articles into
+`wiki/`. Then press **Cmd/Ctrl + G** in Obsidian to see the graph — you should get roughly
+**8 articles and 23 links**.
 
 Then ask it something:
 
@@ -25,6 +26,8 @@ Then ask it something:
 
 - **A note** — anything in your own words, into `raw/notes/`.
 - **A link** — a file in `raw/links/` containing nothing but a URL.
+- **A transcript** — a podcast, meeting, or talk transcript into `raw/transcripts/`. Messy
+  is fine; the noise gets stripped on the way into the article, not out of the archive.
 
 Run `/ingest` again. Repeat. The graph gets more useful as it grows, which is the whole
 claim being tested.

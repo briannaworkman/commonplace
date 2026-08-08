@@ -8,7 +8,7 @@ the markdown files *are* the system.
 
 | Path | What it holds |
 |------|---------------|
-| `raw/` | Sources, append-only. Never edit a source's body after it lands. The subfolder sets the type: `raw/notes/`, `raw/links/`. |
+| `raw/` | Sources, append-only. Never edit a source's body after it lands. The subfolder sets the type: `raw/notes/`, `raw/links/`, `raw/transcripts/`. |
 | `wiki/` | One article per concept, written by Claude. `wiki/INDEX.md` lists them all. |
 | `outputs/` | Saved answers to questions. |
 
@@ -48,7 +48,7 @@ Raw sources:
 ```yaml
 ---
 title: "…"
-source_type: note        # note | link
+source_type: note        # note | link | transcript
 source_url: "https://…"  # links only
 captured: YYYY-MM-DD
 ---
@@ -70,9 +70,16 @@ related: ["[[Other Article]]"]
 ## Ingesting sources
 
 1. Find un-ingested sources using the rule above. If there are none, say so and stop.
-2. Read each source. If a `raw/links/` file contains only a bare URL, fetch the page
-   and replace the body with the fetched text, keeping the frontmatter. If the fetch
-   fails, leave the file alone, say so, and move on — it will be retried next time.
+2. Read each source, according to its type:
+   - **note** — read as-is.
+   - **link** — if the file contains only a bare URL, fetch the page and replace the body
+     with the fetched text, keeping the frontmatter. If the fetch fails, leave the file
+     alone, say so, and move on — it will be retried next time.
+   - **transcript** — read it, but **strip the noise on the way out**: speaker labels,
+     timestamps, filler, crosstalk, tangents, and ad reads never appear in an article.
+     Leave the file in `raw/` exactly as it is. The mess is the archive; the article is
+     the understanding. Most of a transcript is not an idea — expect a long one to yield
+     only two or three articles, and do not pad.
 3. Add frontmatter to any source missing it. Never rewrite a source's body otherwise.
 4. Read `wiki/INDEX.md` and map the ideas in the source to existing articles.
 5. Create or update one article per concept. Articles are **evergreen explanations of
