@@ -64,6 +64,13 @@ are real, drop the ones your writing method invented.
 Nobody planned that link. It appeared because both sources went into the same graph. That is
 the entire argument for keeping one, and it's the thing a folder of PDFs will never do.
 
+**`/query` was run too — see `outputs/`.** Two saved answers are in there. The first is a
+normal one: an answer assembled from five articles, with the path it took through the graph
+and citations down to the raw sources. The second is the one worth reading — a question the
+wiki *doesn't* cover, where the honest answer is "this isn't in here," plus what to ingest to
+close the gap. A system that will tell you it doesn't know is the one you can trust when it
+says it does.
+
 **Every article carries its provenance.** The `sources:` field is what lets `/query` cite
 where an answer came from. It's also the system's entire memory of what it has read — see
 `CLAUDE.md`.

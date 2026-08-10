@@ -1,6 +1,7 @@
 # Wiki Index
 
-_One line per article: `- [Title](Title.md) — one-sentence summary #tag #tag`_
+_Format: one line per article — a markdown link to the file, an em dash, a one-sentence
+summary, then hashtags._
 _Maintained by `/ingest`. Don't hand-edit entries — edit the articles themselves._
 
 - [Atomic Notes](Atomic Notes.md) — one idea per note, titled as a defensible claim, because only specific notes can be linked precisely #note-taking #principle
