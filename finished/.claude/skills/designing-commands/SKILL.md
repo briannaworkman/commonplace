@@ -28,6 +28,17 @@ ones you chose for them** so they know what to go change.
 If they say "just pick for me" — do it, but afterwards tell them the two choices most worth
 revisiting and why. They should leave knowing which knobs exist.
 
+## Non-negotiables — never put these on the menu
+
+Three things every command in this vault does. They are not choices, so don't offer them as
+options and don't let a menu answer quietly drop one:
+
+1. **Read the wiki before answering.** Start at `wiki/INDEX.md`.
+2. **Answer only from what the wiki says.** If it isn't there, say so instead of guessing.
+3. **Cite the articles *and* the `raw/` sources beneath them.** Article-only citations are not
+   enough — being able to open the original source is the whole point of the `sources:` field.
+   Whatever output format they pick, the raw paths appear in it.
+
 ## The questions for `/query`
 
 Present these as options, with what each one buys. Keep the whole menu under ~15 lines.
@@ -44,9 +55,10 @@ Present these as options, with what each one buys. Keep the whole menu under ~15
    turns every unanswerable question into a reading list.
 4. **Save every answer, or only on request?** Always writing to `outputs/` builds a record of
    what they've asked; on-request keeps the folder clean.
-5. **What should the output look like?** Prose with inline links / a citations table / include
-   the path it took through the graph. Showing the path is how they catch it reading the
-   wrong articles.
+5. **How should the citations be presented?** Inline links in the prose / a table of articles
+   and their raw sources / a table that also shows the path it walked through the graph.
+   Showing the path is how they catch it reading the wrong articles. Note this is a question
+   about *format* — that raw sources appear at all is a non-negotiable, not an option.
 
 There is no right answer to any of these. Do not recommend one set. If they ask what you'd
 pick, say what you'd pick *and* what it costs.
@@ -76,14 +88,20 @@ to).
 
 ## After writing it
 
-Three things, in this order:
+Four things, in this order:
 
-1. **Tell them to open the file and read it.** This matters more than running it. They should
+1. **Warn them the command may not be recognised yet.** The list of available commands is read
+   when a session starts, so one created mid-session often isn't picked up until you reload —
+   typing `/query` gets "not an available command" even though the file is right there and
+   correct. Tell them: **start a new session, or reload, then try again.** Say this *before*
+   they run it, so the warning reads as expected rather than as a broken command.
+
+2. **Tell them to open the file and read it.** This matters more than running it. They should
    see that their decisions are sitting there in plain sentences they can edit.
-2. Point out that this skill is also just a markdown file, at
+3. Point out that this skill is also just a markdown file, at
    `.claude/skills/designing-commands/SKILL.md`. Same idea one level up — they can open it,
    change it, or write their own.
-3. Suggest they run it, and try one question the wiki covers well and one it doesn't, so they
+4. Suggest they run it, and try one question the wiki covers well and one it doesn't, so they
    see both behaviours.
 
 Do not do the command's job by hand. If they ask for a command, they get a file.

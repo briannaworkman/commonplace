@@ -69,7 +69,9 @@ Short list on purpose. Everything else is yours.
 1. **Read the wiki before answering.** Start at `wiki/INDEX.md`.
 2. **Answer only from what the wiki says.** If it's not in there, say so instead of guessing.
    This is the whole reason the thing is trustworthy.
-3. **Cite what you used** — the articles, and the `raw/` sources beneath them.
+3. **Cite what you used** — the articles, **and the `raw/` sources beneath them.** Article-only
+   citations aren't enough. Being able to open the original is the whole point of the
+   `sources:` field, so make sure the raw paths end up in your output.
 
 ### The decisions that are actually yours
 
@@ -125,6 +127,10 @@ Then run it:
 ```
 /query What makes a note-taking system compound instead of decay?
 ```
+
+> **If you get "not an available command" — the file is fine.** The list of commands is read
+> when a session starts, so one you just created often isn't picked up until you reload. Start
+> a new session and try again. Nothing is broken; it just hasn't been noticed yet.
 
 Watch what it cites. It should point at specific articles *and* the raw sources beneath them.
 Then try something your wiki definitely doesn't cover, and see whether it admits it.
