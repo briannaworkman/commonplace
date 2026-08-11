@@ -2,6 +2,10 @@
 
 This is `starter/` after a single `/ingest`. Nothing else was done to it.
 
+It also carries **reference versions of the two commands you write yourself** —
+`.claude/commands/query.md` and `.claude/commands/lint.md`. They're one way to write them,
+not the only way. Try yours before reading these.
+
 Open this folder as an Obsidian vault and press **Cmd/Ctrl + G** to see what your graph
 should look like — or just read the articles here on GitHub.
 

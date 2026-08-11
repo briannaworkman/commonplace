@@ -3,8 +3,8 @@
 Workshop materials — Claude Workshop Day, Detroit, 12 August 2026.
 
 Drop a source into `raw/`, and Claude compiles it into cross-linked articles in `wiki/`.
-Obsidian draws the graph. **No Python, no database, no build step** — markdown files and
-three slash commands.
+Obsidian draws the graph. **No Python, no database, no build step** — a folder of markdown
+files and a slash command you can read in a minute.
 
 > A *commonplace book* is what readers kept for four centuries before software: a bound
 > notebook of passages worth keeping, copied out by hand and cross-referenced so they could
@@ -19,7 +19,7 @@ three slash commands.
 | Folder | What it is |
 |--------|-----------|
 | **`starter/`** | The kit. Four sources waiting in `raw/` — a note, two links, and a podcast transcript — and an empty `wiki/`. **This is the one you open.** |
-| **`finished/`** | The answer key — the same kit after one `/ingest`. Eight articles, twenty-three links. Compare against it, or just read it. |
+| **`finished/`** | The answer key — the same vault after one `/ingest`, plus reference versions of the commands you'll write. Compare against it, or just read it. |
 
 If you fall behind during the session, don't scramble. `finished/` has the completed
 version, and `starter/` works fine at your kitchen table afterwards.
@@ -79,17 +79,21 @@ touched — the mess stays archived, and only the understanding is extracted.
 Back to Obsidian. **Cmd/Ctrl + G**. Your notes are nodes; your `[[wikilinks]]` are edges.
 
 You should get roughly **8 articles and 23 links**. Faded, hollow nodes would mean a broken
-link — run `/lint` if you see any.
+link — a filename that didn't match its title. Repairing those is what a `/lint` command
+would do, and writing one is a good exercise after `/query`.
 
-### 5. Ask it something
+### 5. Look at what `/ingest` actually is — then write your own command
 
-```
-/query What makes a note-taking system compound instead of decay?
-```
+Open `.claude/commands/ingest.md`. It's a markdown file: a description, then numbered steps
+in plain English. No code, nothing registered anywhere. **That's the whole mechanism.**
 
-Claude reads the index, walks the graph, and answers **only** from what your wiki actually
-says — citing the articles and the raw sources beneath them. If the wiki doesn't cover it,
-it tells you instead of guessing. The answer saves to `outputs/`.
+So write another one. `starter/README.md` walks you through building `/query` — the command
+that asks your vault a question and answers only from what it actually read, with citations
+back to the source. You can write the file by hand or ask Claude to write it for you; both
+teach the same thing.
+
+That's the part worth taking home. Not this vault — the fact that you can hand a folder a
+page of English and get a tool.
 
 ---
 
@@ -100,6 +104,7 @@ Drop your own source into `starter/raw/` and run `/ingest` again:
 - **A note** — anything in your own words, into `raw/notes/`.
 - **A link** — a file in `raw/links/` containing nothing but a URL. Claude fetches it,
   archives the text, and folds it in.
+- **A transcript** — a podcast, meeting, or talk into `raw/transcripts/`. Messy is fine.
 
 Run it a few times and the collection starts doing what folders never do: getting *more*
 useful as it gets bigger.
@@ -118,10 +123,14 @@ audit it by reading it.
 
 ## The commands
 
-| Command | What it does |
-|---------|--------------|
-| `/ingest` | Compile new sources in `raw/` into `wiki/` articles |
-| `/query <question>` | Answer from the wiki, with citations, saved to `outputs/` |
-| `/lint` | Repair broken links, orphans, and duplicate articles |
+`starter/` ships exactly one, on purpose:
 
-They live in `.claude/commands/` as plain markdown. Edit them — that's the point.
+| Command | What it does | Where |
+|---------|--------------|-------|
+| `/ingest` | Compile new sources in `raw/` into `wiki/` articles | ships in `starter/` |
+| `/query <question>` | Answer from the wiki, with citations, saved to `outputs/` | **you write this** |
+| `/lint` | Repair broken links, orphans, and duplicate articles | a good third one |
+
+They're plain markdown files in `.claude/commands/`. Adding a file adds a command — nothing
+to register, nothing to restart. Reference versions of `/query` and `/lint` live in
+`finished/` if you want to compare, but write yours first.

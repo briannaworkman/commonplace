@@ -88,12 +88,19 @@ frontmatter gets frontmatter added. Nothing else.
 
 ## Commands
 
+One ships with this vault:
+
 | Command | What it does |
 |---------|--------------|
 | `/ingest` | Compile new sources in `raw/` into `wiki/` articles |
-| `/query <question>` | Answer from the wiki, with citations, saved to `outputs/` |
-| `/lint` | Repair broken links, orphans, and duplicate articles |
 
-Each one is a markdown file in `.claude/commands/`. Open any of them — a slash command is
-just a file with a `description` and instructions in plain English. Write another one and it
-works.
+It is a markdown file at `.claude/commands/ingest.md`. That is all a slash command is — a
+file with a `description` and instructions in plain English. Adding another file to that
+folder adds another command; there is nothing to register or restart.
+
+**If asked to help write a new command**, read `.claude/commands/ingest.md` first and match
+its shape: frontmatter with a `description`, then numbered stages, then a check-your-work
+step, then a report step. A command that takes an argument also needs `argument-hint` in the
+frontmatter and `$ARGUMENTS` in the body, where whatever the user typed gets substituted in.
+
+Write the command file. Do not do the work by hand instead of writing it.
