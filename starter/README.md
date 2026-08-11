@@ -50,15 +50,41 @@ argument-hint: <your question>
 - Somewhere in the body, write **`$ARGUMENTS`**. Whatever you type after `/query` gets
   substituted in there. Without it, your command never sees the question.
 
-**What it should do** — the requirements, not the wording. That part's yours:
+### The three things it has to do
 
-1. Read `wiki/INDEX.md`, pick the relevant articles, read them, and follow `[[wikilinks]]`
-   outward as the question needs.
-2. Answer **only** from what the wiki actually says. If the wiki doesn't cover it, say so
-   plainly instead of guessing — and name what source would close the gap.
-3. Save the answer to `outputs/YYYY-MM-DD-<slug>.md` with the question, the answer, the path
-   it took through the graph, and citations to the articles **and** their `raw/` sources.
-4. Report the answer inline.
+Short list on purpose. Everything else is yours.
+
+1. **Read the wiki before answering.** Start at `wiki/INDEX.md`.
+2. **Answer only from what the wiki says.** If it's not in there, say so instead of guessing.
+   This is the whole reason the thing is trustworthy.
+3. **Cite what you used** — the articles, and the `raw/` sources beneath them.
+
+### The decisions that are actually yours
+
+This is where two people write genuinely different commands. There's no right answer to any
+of these — pick, write it down, and see what you get.
+
+**How far do you follow the links?** Only the articles the index summary suggests? Or do you
+follow `[[wikilinks]]` one hop out from those? Two hops? A shallow command is fast and
+focused. A deep one finds things you'd forgotten were connected — and sometimes wanders off.
+
+**Do backlinks count for anything?** In Obsidian, open any article and look at its backlinks
+panel — everything that points *at* it. An article with lots of inbound links is probably
+load-bearing in your thinking; one with a single inbound link is probably a detail. Should
+your command care? You could tell it to weight heavily-linked articles as more central, or to
+follow backlinks as well as forward links, or to ignore direction entirely. Each gives you a
+different answer to the same question.
+
+**What happens at the edge of what you know?** Refuse flatly? Answer the part it can and mark
+where the wiki stops? Name the specific source you'd need to ingest to close the gap? The
+last one turns every unanswerable question into a reading list.
+
+**Does it save every answer?** Always writing to `outputs/` builds a record of what you've
+asked. Only saving on request keeps the folder clean. Your call.
+
+**What should the answer look like?** Prose with links inline? A citations table? Should it
+show you the *path* it took through the graph — which articles, in what order — or just the
+conclusion? Seeing the path is how you catch it reading the wrong things.
 
 **Two ways to do this, both legitimate:**
 
@@ -76,9 +102,10 @@ Then run it:
 Watch what it cites. It should point at specific articles *and* the raw sources beneath them.
 Then try something your wiki definitely doesn't cover, and see whether it admits it.
 
-> Stuck, or want to compare? `../finished/.claude/commands/query.md` is one way to write it.
-> Try yours first — there's no single right answer, and yours will be shaped like your
-> questions.
+> **Don't read `../finished/.claude/commands/query.md` yet.** It's there for when you're
+> properly stuck, and it's one set of answers to the questions above — not the answers. If
+> you read it first you'll write mine instead of yours, and mine is shaped like the questions
+> *I* ask my notes. Yours should be shaped like the questions you ask.
 
 ---
 
