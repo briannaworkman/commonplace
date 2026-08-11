@@ -89,8 +89,12 @@ in plain English. No code, nothing registered anywhere. **That's the whole mecha
 
 So write another one. `starter/README.md` walks you through building `/query` — the command
 that asks your vault a question and answers only from what it actually read, with citations
-back to the source. You can write the file by hand or ask Claude to write it for you; both
-teach the same thing.
+back to the source.
+
+Write the file by hand, or say **"help me write my own /query command"** and a skill in the
+vault will ask you what you want out of it, then write the file from your answers. Either
+way it ends up being *your* command — the interesting decisions (how far to follow links,
+whether backlinks should count, what it does when it doesn't know) are yours to make.
 
 That's the part worth taking home. Not this vault — the fact that you can hand a folder a
 page of English and get a tool.
@@ -134,3 +138,12 @@ audit it by reading it.
 They're plain markdown files in `.claude/commands/`. Adding a file adds a command — nothing
 to register, nothing to restart. Reference versions of `/query` and `/lint` live in
 `finished/` if you want to compare, but write yours first.
+
+## And one skill
+
+`.claude/skills/designing-commands/SKILL.md` — guidance for designing a command of your own.
+
+The difference: **a command runs when you type its name; a skill sits there being findable.**
+Claude notices a skill is relevant and reaches for it, so *"help me write my own /query
+command"* is enough — you don't have to know it exists. Both are just markdown files in a
+folder.

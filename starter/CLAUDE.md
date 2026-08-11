@@ -98,9 +98,9 @@ It is a markdown file at `.claude/commands/ingest.md`. That is all a slash comma
 file with a `description` and instructions in plain English. Adding another file to that
 folder adds another command; there is nothing to register or restart.
 
-**If asked to help write a new command**, read `.claude/commands/ingest.md` first and match
-its shape: frontmatter with a `description`, then numbered stages, then a check-your-work
-step, then a report step. A command that takes an argument also needs `argument-hint` in the
-frontmatter and `$ARGUMENTS` in the body, where whatever the user typed gets substituted in.
+**If asked to help write a new command**, use the `designing-commands` skill at
+`.claude/skills/designing-commands/SKILL.md`. It exists so the person makes the design
+decisions themselves rather than receiving a generic command. Follow it rather than
+improvising, and write the command *file* — never do the command's job by hand instead.
 
-Write the command file. Do not do the work by hand instead of writing it.
+That skill is itself just a markdown file. Same as everything else here.

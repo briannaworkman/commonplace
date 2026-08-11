@@ -88,10 +88,26 @@ conclusion? Seeing the path is how you catch it reading the wrong things.
 
 **Two ways to do this, both legitimate:**
 
-- **Write the file yourself.** Copy the shape from `ingest.md`. Fastest if you like typing.
-- **Ask Claude to write it.** Paste the requirements above and say *"write this as
-  `.claude/commands/query.md`."* Claude has already read `CLAUDE.md` and `ingest.md`, so it
-  knows the house style. This is not cheating — bootstrapping your own tooling is the point.
+**A. Write the file yourself.** Copy the shape from `ingest.md`. Best if you already know
+what you want and would rather just type it.
+
+**B. Get walked through it.** Say this to Claude:
+
+```
+Help me write my own /query command
+```
+
+That triggers a skill in this vault — `.claude/skills/designing-commands/SKILL.md` — which
+asks you the questions above as a single menu, then writes `.claude/commands/query.md` from
+*your* answers. It also can't forget `$ARGUMENTS`, which is the mistake that silently breaks
+a command.
+
+Neither path is cheating. Bootstrapping your own tooling is the point.
+
+> **A skill is the other kind of file.** A command runs when you type its name. A skill sits
+> there being *findable* — Claude notices it's relevant and reaches for it, which is why
+> "help me write my own /query command" was enough and you didn't have to know its name.
+> Open `SKILL.md` afterwards. It's markdown, same as everything else.
 
 Then run it:
 

@@ -94,6 +94,13 @@ frontmatter gets frontmatter added. Nothing else.
 | `/query <question>` | Answer from the wiki, with citations, saved to `outputs/` |
 | `/lint` | Repair broken links, orphans, and duplicate articles |
 
-Each one is a markdown file in `.claude/commands/`. Open any of them — a slash command is
-just a file with a `description` and instructions in plain English. Write another one and it
-works.
+Each is a markdown file in `.claude/commands/`. That is all a slash command is — a file with
+a `description` and instructions in plain English. Adding another file to that folder adds
+another command; there is nothing to register or restart.
+
+**If asked to help write a new command**, use the `designing-commands` skill at
+`.claude/skills/designing-commands/SKILL.md`. It exists so the person makes the design
+decisions themselves rather than receiving a generic command. Follow it rather than
+improvising, and write the command *file* — never do the command's job by hand instead.
+
+That skill is itself just a markdown file. Same as everything else here.
