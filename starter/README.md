@@ -16,8 +16,13 @@ starting line.
 ```
 
 Claude reads the four sources, fetches the one that's still just a URL, and writes
-cross-linked articles into `wiki/`. Then press **Cmd/Ctrl + G** in Obsidian — you should get roughly **8 articles and
-23 links** where a moment ago there was nothing.
+cross-linked articles into `wiki/`. **This takes a few minutes** — it's reading about 400 lines
+of source material and writing ten-ish articles, so let it work.
+
+Then press **Cmd/Ctrl + G** in Obsidian. You should get somewhere around **8–12 articles and
+20–50 links** where a moment ago there was nothing. The range is wide on purpose: Claude
+decides how finely to split the concepts, so your vault won't match anyone else's. What should
+be true either way is that there are *edges*, and that no node is faded.
 
 > **The graph is yours to tune.** Node size, link distance, colour groups, whether orphans
 > show — all of it lives in the settings panel inside graph view, and none of it is shipped

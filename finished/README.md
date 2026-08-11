@@ -79,12 +79,15 @@ says it does.
 where an answer came from. It's also the system's entire memory of what it has read — see
 `CLAUDE.md`.
 
-## Your results will differ
+## Your results will differ — more than you'd expect
 
-Claude won't produce these eight articles word for word, and might reasonably split the
-concepts differently — nine articles, or six. That's fine. Compare the *shape*: are the
-articles about single ideas, do links run both ways, does every article cite its sources,
-and does the graph connect?
+This is one worked example, not the target. A cold run of the same four sources produced **ten**
+articles and **48** links, with different titles: `Links Over Folders` instead of `Linked
+Thought`, `The Three-Pass Reading Method` instead of `Progressive Summarization`, plus `Start
+Messy` and `The Fake-Edge Test`, which aren't here at all.
+
+So don't compare names or counts. Compare the *shape*: is each article about a single idea, do
+links run both ways, does every article cite its sources, and does the graph connect?
 
 If your links render as faded hollow nodes, they're broken — a filename didn't match its
 title. Run `/lint`.

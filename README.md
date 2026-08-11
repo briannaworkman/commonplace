@@ -20,7 +20,7 @@ files and a slash command you can read in a minute.
 | Folder | What it is |
 |--------|-----------|
 | **`starter/`** | The kit. Four sources waiting in `raw/` — a note, two links, and a podcast transcript — and an empty `wiki/`. **This is the one you open.** |
-| **`finished/`** | The answer key — the same vault after one `/ingest`, plus reference versions of the commands you'll write. Compare against it, or just read it. |
+| **`finished/`** | One worked example — the same vault after one `/ingest`, plus reference versions of the commands you'll write. Your article titles will differ from these; compare the *shape*, not the names. |
 
 If you fall behind during the session, don't scramble. `finished/` has the completed
 version, and `starter/` works fine at your kitchen table afterwards.
@@ -89,9 +89,12 @@ touched — the mess stays archived, and only the understanding is extracted.
 
 Back to Obsidian. **Cmd/Ctrl + G**. Your notes are nodes; your `[[wikilinks]]` are edges.
 
-You should get roughly **8 articles and 23 links**. Faded, hollow nodes would mean a broken
-link — a filename that didn't match its title. Repairing those is what a `/lint` command
-would do, and writing one is a good exercise after `/query`.
+You should get somewhere around **8–12 articles and 20–50 links** — the spread is wide because
+Claude decides how finely to split the concepts, and reasonable runs differ a lot. Don't chase
+a number; check that there are edges and that nothing is faded.
+
+Faded, hollow nodes mean a broken link — a filename that didn't match its title. Repairing
+those is what a `/lint` command would do, and writing one is a good exercise after `/query`.
 
 ### 5. Look at what `/ingest` actually is — then write your own command
 
