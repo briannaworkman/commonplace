@@ -2,22 +2,59 @@
 description: Compile new sources from raw/ into the wiki
 ---
 
-Run the ingestion pipeline exactly as defined under "Ingesting sources" in `CLAUDE.md`.
+Compile every un-ingested source in `raw/` into `wiki/` articles.
 
-1. **Find what's new.** List every `.md` file under `raw/`. For each path, search `wiki/`
-   for that path appearing in a `sources:` list. Any path with no match is un-ingested.
-   Report the list before you start work.
-2. If nothing is un-ingested, say "Nothing to ingest" and stop.
-3. Otherwise process each one per the contract: fetch bare-URL links, add missing
-   frontmatter, map ideas onto existing articles, create or update one article per
-   concept, and add `[[wikilinks]]` in both directions.
-4. Append each source's path to the `sources:` of every article you touched, and add a
-   line to `wiki/INDEX.md` for each new article.
-5. Summarize: sources processed, articles created vs. updated, new links made, and any
-   source you skipped because its fetch failed.
+`CLAUDE.md` defines the frontmatter schemas, the naming rule, and what an article is. Follow
+those. Everything below is the procedure.
 
-**Before you finish, check the naming rule** — it is the one thing that breaks the graph:
-every article's filename must be its exact title in Title Case with spaces
-(`wiki/Atomic Notes.md`, not `wiki/atomic-notes.md`). Do not slugify. Then confirm every
-`[[link]]` you wrote points at a title that has a file. Report the article count and the
-link count so it can be checked.
+## 1. Find what's new
+
+List every `.md` file under `raw/`. For each path, search `wiki/` for that path appearing in
+a `sources:` list. Any path with no match is un-ingested.
+
+Report the list before doing any work. If nothing is un-ingested, say "Nothing to ingest"
+and stop.
+
+## 2. Read each source, according to its type
+
+- **note** — read as-is.
+- **link** — if the file contains only a bare URL, fetch the page and replace the body with
+  the fetched text, keeping the frontmatter. If the fetch fails, leave the file alone, say
+  so, and move on — the next run will retry it.
+- **transcript** — read it, but **strip the noise on the way out**: speaker labels,
+  timestamps, filler, crosstalk, tangents, and ad reads never appear in an article. Leave
+  the file in `raw/` exactly as it is. The mess is the archive; the article is the
+  understanding. Most of a transcript is not an idea — expect a long one to yield two or
+  three articles, and do not pad to fill space.
+
+Add frontmatter to any source missing it. Do not otherwise touch a source's body.
+
+## 3. Map the ideas onto the existing wiki
+
+Read `wiki/INDEX.md`. For each idea in the source, decide: does an article already cover
+this? Prefer updating an existing article over creating a near-duplicate.
+
+## 4. Write the articles
+
+One article per concept. Add `[[wikilinks]]` in **both** directions — link the new article
+to related ones, then edit those to link back.
+
+## 5. Record provenance
+
+Append the source's path to the `sources:` list of every article you touched. This is what
+makes the source count as ingested, so it is not optional.
+
+## 6. Update the index
+
+Add one line per new article to `wiki/INDEX.md`.
+
+## 7. Check your work before reporting
+
+- Every article's filename is its exact title, Title Case, with spaces. **Do not slugify.**
+- Every `[[link]]` you wrote points at a title that has a file.
+- Every article you touched lists the source in `sources:`.
+
+## 8. Report
+
+Sources processed, articles created vs. updated, links added, and the final article and link
+counts so they can be checked. Name any source you skipped and why.

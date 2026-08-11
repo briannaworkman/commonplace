@@ -4,6 +4,10 @@ Sources land in `raw/`. Claude compiles them into cross-linked articles in `wiki
 Obsidian renders the result as a graph. There is no database and no build step —
 the markdown files *are* the system.
 
+**This file holds only what is true all the time.** It is loaded into every session, so it
+carries facts about the repo, not procedures. The procedures live in `.claude/commands/` —
+one self-contained file per command, loaded only when that command actually runs.
+
 ## Directories
 
 | Path | What it holds |
@@ -17,27 +21,27 @@ the markdown files *are* the system.
 > A file in `raw/` has been ingested **if and only if** its path appears in the
 > `sources:` list of some `wiki/` article.
 
-That is the only record kept. To find un-ingested sources, list `raw/**/*.md` and
-search `wiki/` for each path; anything with no match is new. Appending the path to
-`sources:` *is* the act of recording it — so the memory can never drift out of sync
-with the wiki, because there is only one copy of it.
+That is the only record kept. To find un-ingested sources, list `raw/**/*.md` and search
+`wiki/` for each path; anything with no match is new. Appending the path to `sources:` *is*
+the act of recording it — so the memory can never drift out of sync with the wiki, because
+there is only one copy of it.
 
 ## Naming — this one is load-bearing
 
 **An article's filename is its title, in Title Case, with real spaces in the filename.**
 
 ```
-✅ wiki/Atomic Notes.md          linked as [[Atomic Notes]]
+✅ wiki/Atomic Notes.md              linked as [[Atomic Notes]]
 ✅ wiki/The Collector's Fallacy.md   linked as [[The Collector's Fallacy]]
-❌ wiki/atomic-notes.md          kebab-case — [[Atomic Notes]] will NOT resolve
-❌ wiki/atomic_notes.md          underscores — same problem
+❌ wiki/atomic-notes.md              kebab-case — [[Atomic Notes]] will NOT resolve
+❌ wiki/atomic_notes.md              underscores — same problem
 ```
 
-Do **not** slugify, kebab-case, lowercase, or strip spaces and punctuation from
-filenames, even though that is the common convention elsewhere. Obsidian resolves
-`[[Some Title]]` by looking for a file literally named `Some Title.md`. A kebab-case
-filename means every link to it renders as a faded phantom node and the graph falls
-apart — which defeats the entire point of the system.
+Do **not** slugify, kebab-case, lowercase, or strip spaces and punctuation from filenames,
+even though that is the common convention elsewhere. Obsidian resolves `[[Some Title]]` by
+looking for a file literally named `Some Title.md`. A kebab-case filename means every link
+to it renders as a faded phantom node and the graph falls apart — which defeats the entire
+point of the system.
 
 The filename and the `title:` frontmatter field must be identical strings.
 
@@ -67,35 +71,29 @@ related: ["[[Other Article]]"]
 ---
 ```
 
-## Ingesting sources
+## What an article is
 
-1. Find un-ingested sources using the rule above. If there are none, say so and stop.
-2. Read each source, according to its type:
-   - **note** — read as-is.
-   - **link** — if the file contains only a bare URL, fetch the page and replace the body
-     with the fetched text, keeping the frontmatter. If the fetch fails, leave the file
-     alone, say so, and move on — it will be retried next time.
-   - **transcript** — read it, but **strip the noise on the way out**: speaker labels,
-     timestamps, filler, crosstalk, tangents, and ad reads never appear in an article.
-     Leave the file in `raw/` exactly as it is. The mess is the archive; the article is
-     the understanding. Most of a transcript is not an idea — expect a long one to yield
-     only two or three articles, and do not pad.
-3. Add frontmatter to any source missing it. Never rewrite a source's body otherwise.
-4. Read `wiki/INDEX.md` and map the ideas in the source to existing articles.
-5. Create or update one article per concept. Articles are **evergreen explanations of
-   an idea**, not summaries of a source — a reader should learn the concept without
-   knowing where it came from. Add `[[wikilinks]]` in **both** directions: link the new
-   article to related ones, and edit those to link back.
-6. Append the source's path to the `sources:` list of every article you touched.
-7. Add one line per new article to `wiki/INDEX.md`.
-8. Report what changed: sources processed, articles created vs. updated, links added.
+An **evergreen explanation of one idea** — not a summary of a source. A reader should learn
+the concept without knowing where it came from. Two articles covering one idea is a bug; one
+article covering three ideas is also a bug.
 
-## Answering a question
+Links go in **both** directions. When you link a new article to an existing one, edit the
+existing one to link back.
 
-Read `wiki/INDEX.md`, read the relevant articles, and follow `[[wikilinks]]` outward as
-the question requires. Answer **only** from what the wiki says — if it does not cover
-the question, say so plainly and name the source that would close the gap. Never fill a
-gap from general knowledge without labelling it.
+## Sources are append-only
 
-Save the answer to `outputs/YYYY-MM-DD-<slug>.md` with the question, the answer, the path
-taken through the graph, and citations to both the articles and their `raw/` sources.
+Never edit a source's body once it has landed. Two exceptions, both at ingestion time: a
+bare-URL link file gets its body replaced with the fetched page, and a source missing
+frontmatter gets frontmatter added. Nothing else.
+
+## Commands
+
+| Command | What it does |
+|---------|--------------|
+| `/ingest` | Compile new sources in `raw/` into `wiki/` articles |
+| `/query <question>` | Answer from the wiki, with citations, saved to `outputs/` |
+| `/lint` | Repair broken links, orphans, and duplicate articles |
+
+Each one is a markdown file in `.claude/commands/`. Open any of them — a slash command is
+just a file with a `description` and instructions in plain English. Write another one and it
+works.
