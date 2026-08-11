@@ -46,9 +46,15 @@ point of the system.
 The filename and the `title:` frontmatter field must be identical strings.
 
 **Never let a line break fall inside `[[double brackets]]`.** Prose wraps; wikilinks must not.
-A link whose target is split across two lines may not resolve, and it is invisible in the file
-— it just quietly becomes a phantom node. If a link would push a line over, break the line
-*before* the `[[` or *after* the `]]`, never inside.
+A link whose *target* is split across two lines **does not resolve** — confirmed in Obsidian,
+not a theoretical risk. If a link would push a line over, break the line *before* the `[[` or
+*after* the `]]`, never inside. Splitting only the display text (`[[Target|some wrapped
+words]]`) is harmless, but don't rely on the distinction — keep whole links on one line.
+
+This one is nastier than it looks: if the article also lists that link in `related:`, the
+frontmatter copy resolves fine, so **the graph still looks correct** and nothing appears
+faded. The break is only visible when reading the article. Graph view will not catch it for
+you.
 
 ## Frontmatter
 

@@ -52,8 +52,10 @@ Add one line per new article to `wiki/INDEX.md`.
 
 - Every article's filename is its exact title, Title Case, with spaces. **Do not slugify.**
 - Every `[[link]]` you wrote points at a title that has a file.
-- **No `[[link]]` has a line break inside it.** Prose wrapping does this silently and the
-  result is a phantom node. Re-wrap the line so the whole link sits on one line.
+- **No `[[link]]` has a line break inside it.** Prose wrapping does this silently, a split
+  target does not resolve, and if the article also lists that link in `related:` the graph
+  still looks fine — so nothing will alert you. Search your own output for `[[` followed by a
+  newline before the closing `]]`, and re-wrap those lines.
 - Every article you touched lists the source in `sources:`.
 
 ## 8. Report
