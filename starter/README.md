@@ -148,6 +148,15 @@ added, whatever fits how you actually work.
 Run it a few times and the graph starts doing what folders never do: getting *more* useful as
 it gets bigger.
 
+### Keeping it in git — make it private
+
+If you want version history for this, go to the repo and click **Use this template** →
+**Create a new repository**, and **set it to Private**.
+
+> ⚠️ **Don't fork it.** A fork of a public repo is permanently public — GitHub gives you no way
+> to make it private afterwards. This folder is about to fill up with your actual notes, so
+> start it private and save yourself the discovery.
+
 ---
 
 ## Files
