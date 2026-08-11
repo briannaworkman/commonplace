@@ -18,6 +18,12 @@ Claude reads the four sources, fetches the two links, and writes cross-linked ar
 `wiki/`. Then press **Cmd/Ctrl + G** in Obsidian — you should get roughly **8 articles and
 23 links** where a moment ago there was nothing.
 
+> **The graph is yours to tune.** Node size, link distance, colour groups, whether orphans
+> show — all of it lives in the settings panel inside graph view, and none of it is shipped
+> with this repo. Your layout preferences are yours; `.obsidian/graph.json` is gitignored so
+> it never travels. Drag things around, zoom in, colour `path:raw` differently from
+> `path:wiki` if you want to see sources and articles at a glance.
+
 ---
 
 ## 2. Look at what `/ingest` actually is
