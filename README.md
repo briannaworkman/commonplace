@@ -33,14 +33,23 @@ version, and `starter/` works fine at your kitchen table afterwards.
 
 ## Get the files
 
-**No git needed:** green **Code** button above → **Download ZIP** → unzip. You'll get a
-folder called **`commonplace-main`** — that's the repo root, and `starter/` is inside it.
+**For the workshop — no git needed.** Green **Code** button → **Download ZIP** → unzip. You'll
+get a folder called **`commonplace-main`**; that's the repo root, and `starter/` is inside it.
+Fastest path, and the one to take if we're doing this live.
 
-**Or clone:**
+**To keep it in git — use the template button, not fork.**
 
-```bash
-git clone https://github.com/briannaworkman/commonplace.git
-```
+Click **Use this template** → **Create a new repository**, and **set it to Private**.
+
+> ⚠️ **Don't fork this if you're going to put real notes in it.** A fork of a public repo is
+> permanently public — GitHub will not let you make it private. The moment you add your actual
+> notes, meeting minutes, or half-formed thinking, you've published all of it.
+>
+> "Use this template" gives you a standalone repo with clean history that you can create as
+> **private**. A second brain fills up with things you never meant to publish. Start it private.
+
+Cloning directly is fine if you only want to read it — you just won't be able to push, since
+it isn't your repository.
 
 ---
 
