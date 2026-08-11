@@ -1,6 +1,7 @@
 # commonplace
 
 Workshop materials — Claude Workshop Day, Detroit, 12 August 2026.
+**github.com/briannaworkman/commonplace**
 
 Drop a source into `raw/`, and Claude compiles it into cross-linked articles in `wiki/`.
 Obsidian draws the graph. **No Python, no database, no build step** — a folder of markdown
@@ -39,7 +40,8 @@ Fastest path, and the one to take if we're doing this live.
 
 **To keep it in git — use the template button, not fork.**
 
-Click **Use this template** → **Create a new repository**, and **set it to Private**.
+Go to **https://github.com/briannaworkman/commonplace** and click **Use this template** →
+**Create a new repository**, and **set it to Private**.
 
 > ⚠️ **Don't fork this if you're going to put real notes in it.** A fork of a public repo is
 > permanently public — GitHub will not let you make it private. The moment you add your actual

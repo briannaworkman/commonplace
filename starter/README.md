@@ -150,8 +150,9 @@ it gets bigger.
 
 ### Keeping it in git — make it private
 
-If you want version history for this, go to the repo and click **Use this template** →
-**Create a new repository**, and **set it to Private**.
+If you want version history for this, go to
+**https://github.com/briannaworkman/commonplace** and click **Use this template** →
+**Create a new repository**, then **set it to Private**.
 
 > ⚠️ **Don't fork it.** A fork of a public repo is permanently public — GitHub gives you no way
 > to make it private afterwards. This folder is about to fill up with your actual notes, so
