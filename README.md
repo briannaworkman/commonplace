@@ -158,3 +158,12 @@ The difference: **a command runs when you type its name; a skill sits there bein
 Claude notices a skill is relevant and reaches for it, so *"help me write my own /query
 command"* is enough — you don't have to know it exists. Both are just markdown files in a
 folder.
+
+---
+
+## License
+
+[MIT](LICENSE) — Copyright (c) 2026 Brianna Workman. Take it, change it, build your own.
+
+The sample transcript in `raw/transcripts/` is original and fictional. If you swap in real
+podcast or meeting transcripts, those belong to whoever made them — keep that copy private.
