@@ -13,7 +13,7 @@ one self-contained file per command, loaded only when that command actually runs
 | Path | What it holds |
 |------|---------------|
 | `raw/` | Sources, append-only. Never edit a source's body after it lands. The subfolder sets the type: `raw/notes/`, `raw/links/`, `raw/transcripts/`. |
-| `wiki/` | One article per concept, written by Claude. `wiki/INDEX.md` lists them all. |
+| `wiki/` | One article per concept, written by Claude. `wiki/INDEX.md` lists them all — one line each, either `[[Wikilink]]` or a markdown link, then an em dash, a one-line summary, and hashtags. |
 | `outputs/` | Saved answers to questions. |
 
 ## The one rule that replaces a database
@@ -44,6 +44,11 @@ to it renders as a faded phantom node and the graph falls apart — which defeat
 point of the system.
 
 The filename and the `title:` frontmatter field must be identical strings.
+
+**Never let a line break fall inside `[[double brackets]]`.** Prose wraps; wikilinks must not.
+A link whose target is split across two lines may not resolve, and it is invisible in the file
+— it just quietly becomes a phantom node. If a link would push a line over, break the line
+*before* the `[[` or *after* the `]]`, never inside.
 
 ## Frontmatter
 
