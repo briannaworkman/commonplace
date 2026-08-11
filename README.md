@@ -66,8 +66,8 @@ Worth reading while things load.
 /ingest
 ```
 
-Claude finds the four sources in `raw/`, reads them, fetches the two links, and writes
-articles into `wiki/` — one per concept, cross-linked in both directions, each recording
+Claude finds the four sources in `raw/`, reads them, fetches the one that's still a bare URL,
+and writes articles into `wiki/` — one per concept, cross-linked in both directions, each recording
 which source it came from.
 
 Watch what happens to the transcript. It goes in full of timestamps, speaker labels, filler

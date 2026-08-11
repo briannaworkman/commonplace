@@ -3,8 +3,9 @@
 This is the working vault. Open **this folder** (not the repo root) in both Obsidian and
 Claude Code.
 
-`raw/` has four sources waiting — a note, two links, and a podcast transcript. `wiki/` is
-empty. That's the starting line.
+`raw/` has four sources waiting — a note, two links, and a podcast transcript. One link is
+still just a bare URL, so you'll watch Claude go fetch it. `wiki/` is empty. That's the
+starting line.
 
 ---
 
@@ -14,8 +15,8 @@ empty. That's the starting line.
 /ingest
 ```
 
-Claude reads the four sources, fetches the two links, and writes cross-linked articles into
-`wiki/`. Then press **Cmd/Ctrl + G** in Obsidian — you should get roughly **8 articles and
+Claude reads the four sources, fetches the one that's still just a URL, and writes
+cross-linked articles into `wiki/`. Then press **Cmd/Ctrl + G** in Obsidian — you should get roughly **8 articles and
 23 links** where a moment ago there was nothing.
 
 > **The graph is yours to tune.** Node size, link distance, colour groups, whether orphans
@@ -92,12 +93,7 @@ asked. Only saving on request keeps the folder clean. Your call.
 show you the *path* it took through the graph — which articles, in what order — or just the
 conclusion? Seeing the path is how you catch it reading the wrong things.
 
-**Two ways to do this, both legitimate:**
-
-**A. Write the file yourself.** Copy the shape from `ingest.md`. Best if you already know
-what you want and would rather just type it.
-
-**B. Get walked through it.** Say this to Claude:
+**Start here.** Say this to Claude:
 
 ```
 Help me write my own /query command
@@ -105,8 +101,12 @@ Help me write my own /query command
 
 That triggers a skill in this vault — `.claude/skills/designing-commands/SKILL.md` — which
 asks you the questions above as a single menu, then writes `.claude/commands/query.md` from
-*your* answers. It also can't forget `$ARGUMENTS`, which is the mistake that silently breaks
-a command.
+*your* answers. The decisions stay yours; it just handles the plumbing, and it can't forget
+`$ARGUMENTS`, which is the mistake that silently breaks a command.
+
+**Prefer to type it yourself?** Go ahead — everything you need is above, and `ingest.md` is
+the shape to copy. Just don't forget `$ARGUMENTS`; without it your command runs with no
+question and gives you no error explaining why.
 
 Neither path is cheating. Bootstrapping your own tooling is the point.
 
